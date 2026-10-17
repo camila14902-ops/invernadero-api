@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Variables del Invernadero - Multi-idioma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .contenedor {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            width: 550px;
+            border: 1px solid #e0e0e0;
+        }
+        h2 {
+            font-size: 15px;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #333333;
+            font-weight: bold;
+        }
+        .campo {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 6px 10px;
+            box-sizing: border-box;
+            border: 1px solid #b5b5b5;
+            background-color: #ffffff;
+            font-size: 14px;
+        }
+        .reporte-fila {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .reporte-fila input {
+            flex-grow: 1;
+        }
+        button {
+            padding: 6px 15px;
+            background-color: #ededed;
+            border: 1px solid #adadad;
+            color: #000000;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e0e0e0;
+        }
+        .zona-inferior {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .selector-idioma {
+            width: auto;
+            min-width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h2>Control de Variables del Invernadero</h2>
+
+    <!-- Variable 1: Temperatura -->
+    <div class="campo">
+        <label for="temperatura">Temperatura:</label>
+        <input type="text" id="temperatura" readonly>
+    </div>
+
+    <!-- Variable 2: Humedad -->
+    <div class="campo">
+        <label for="humedad">Humedad:</label>
+        <input type="text" id="humedad" readonly>
+    </div>
+
+    <!-- Variable 3: pH del Suelo / Agua (Variable de Control Requerida) -->
+    <div class="campo">
+        <label for="ph">Potencial de Hidrógeno (pH):</label>
+        <input type="text" id="ph" readonly>
+    </div>
+
+    <!-- Campo: Reporte escrito alineado con su botón de lectura -->
+    <div class="campo">
+        <label for="reporteEscrito">Reporte escrito:</label>
+        <div class="reporte-fila">
+            <input type="text" id="reporteEscrito" readonly>
+            <button id="btnLeer">Leer datos</button>
+        </div>
+    </div>
+
+    <!-- Sección inferior: Selección de idioma y Botón de Reporte Hablado -->
+    <div class="zona-inferior">
+        <div>
+            <label for="idioma">Idioma del Reporte:</label>
+            <select id="idioma" class="selector-idioma">
+                <option value="es-ES">Español (ES)</option>
+                <option value="en-US">English (US)</option>
+            </select>
+        </div>
+        <button id="btnReporte">Reporte</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
